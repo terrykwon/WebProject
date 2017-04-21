@@ -1,0 +1,212 @@
+body {
+    padding-top: 50px;
+    background: #000000;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 5em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	color: white;
+}
+
+nav {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+
+header {
+	max-width: 850px;
+}
+
+.container.main {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.separator {
+	height: 3px;
+	width: 100px;
+	background-color: white;
+}
+
+
+.navbar-inverse {
+	background-color: #000000;
+}
+
+/*  The main image of the landing page */
+.blended {
+	background-image: url(../img/eggs-main.png);
+	background-blend-mode: hard-light;
+	background-color:black;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position: right;
+	height: 300px;
+	margin: 68px 4px 68px 4px;
+	display: flex;
+	align-items: center;
+}
+
+.landing-text {
+	line-height: 70%;
+}
+
+/*  To move text right by one increment. */
+.landing-text.offset-right-once {
+	position: relative;
+	left: 30px;
+}
+
+/*  To move text right by two increments. */
+.landing-text.offset-right-twice {
+	position: relative;
+	left: 60px;
+}
+
+/* Wraps around photo as desc */
+.item-container {
+	margin-top: 44px;
+}
+
+/* Sets the height of the row. */
+.item {
+	height: 320px;
+}
+
+.item.photo {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.item.photo.dove {
+	background-image: url(../img/item-eggs-dove.jpg);
+}
+
+.item.photo.peacock {
+	background-image: url(../img/item-eggs-peacock.jpg);
+}
+
+.item.desc {
+	background-color: grey;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: right;
+	text-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+}
+
+/* A div placed over the item */
+.item.desc div {
+	position: absolute;
+	right: 16px;
+	top: 90px;
+	line-height: 70%;
+	z-index: 3;
+}
+
+.item.desc.dove {
+	background-color: #362f2d;
+}
+
+.item.desc.peacock {
+	background-color: #5cb8dc;
+}
+
+/* Should appear when hovering over item */
+.buy {
+	position: absolute;
+	visibility: hidden;
+	right: 36px;
+	bottom: 4px;
+}
+
+/* A solid line to divide conten */
+.separator-long {
+	height:2px;
+	width: 100%;
+	background-color: #acacac;
+}
+
+footer {
+	height: 76px;
+	margin-top: 66px;
+}
+
+.footer {
+	margin-top: 24px;
+}
+
+/* Changes text color from white to yellow */
+@keyframes pulse {
+	from {
+		color: white;
+	}
+
+	to {
+		color: yellow;
+	}
+}
+
+/* For desktop */
+@media (min-width: 768px) {
+	.container.main {
+		max-width: 1000px;
+	}
+
+	.blended {
+		height: 500px;
+		margin: 24px 48px 24px 48px;
+	}
+
+	.item.desc {
+		text-align: left;
+	}
+
+	.item.desc div {
+		left: -16px;
+		top: 90px;
+	}
+
+	h3 {
+		font-size: 5em;
+	}
+
+	h4 {
+		font-size: 2em;
+	}
+
+	.clickable:hover h3 {
+		animation-name: pulse;
+		animation-duration: 0.7s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in;
+	}
+
+	.clickable:hover .buy {
+		visibility: visible;
+	}
+}

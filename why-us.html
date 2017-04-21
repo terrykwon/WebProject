@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+  <title>Project 1</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/catalog.css" rel="stylesheet" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+
+  <!-- Embedded stylesheet-->
+  <style>
+    h3 {
+      color: black;
+      font-size: 1.7em;
+    }
+
+    h3 + p {
+      color: black;
+      font-size: 1.5em;
+    }
+
+    img {
+      border-radius: 44px;
+      max-height: 300px;
+      width: auto;
+      margin: auto;
+      padding: 24px;
+    }
+
+    /* The background container */
+    .container-fluid {
+      background: linear-gradient(160deg, black, #1b312e);
+    }
+
+    /* The main container for the content */
+    .container.main {
+      background-color: #ebebeb;
+      position: relative;
+      top: -32px;
+      box-shadow: 2px 8px 8px black;
+    }
+
+    .container.main li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 1.5em;
+    }
+
+    /* Color links */
+    p a {
+      color: blue;
+    }
+
+    td {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 1.5em;
+      padding: 8px;
+    }
+
+    th {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.5em;
+      padding: 8px;
+    }
+
+    /* Color alternating table rows */
+    tr:nth-child(even) {
+      background-color: #cecece;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #acacac;
+    }
+
+    /* Color first row dark */
+    tr:nth-child(1) {
+      background-color: #555555;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      border: 6px solid lightgrey;
+    }
+
+    @media (min-width: 768px) {
+
+      /* To wrap text around images in larger screens */
+      img {
+        float: right;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">egg.com</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="catalog.html">CATALOG</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li class="active"><a href="why-us.html">WHY US?</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <header>
+    <div class="intro-box">
+      <div class="col-md-12">
+        <h1>Why this website is amazing</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="container main">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <section>
+            <h3>Overview</h3>
+            <ol>
+              <li>Design</li>
+              <li>Responsiveness</li>
+              <li>User experience</li>
+              <li>Comparison table</li>
+            </ol>
+          </section>
+
+          <section>
+            <h3>1. Design</h3>
+            <p>This website is based on modern design trends. A bold sans-serif font creates a playful atmosphere and lets customers feel welcome. The photos used in the website were also made to fit the overall design by using techniques such as blending modes, shadows, and gradients.</p>
+          </section>
+
+          <aside>
+            <img src="img/bootstrap-logo.png" alt="bootstrap logo" class="img-responsive">
+          </aside>
+
+          <section>
+            
+            <h3>2. Responsiveness</h3>
+            <p>In addition to looking amazing in desktop browsers, this website is fully optimized for mobile and tablet users. Using <a href="https://www.getbootstrap.com">Bootstrap</a>, the navigation bar collapses in mobile devices, and the content adjusts responsively to fit small screens.</p>
+          </section>
+
+          <section>
+            <h3>3. User experience</h3>
+            <p>When the user interacts with content, it responds with natural animations and UI changes. For example, hovering over the items in the catalog page creates a shadow, which creates the effect of elevating a card. Also, because the primary color is black, this website also saves battery in mobile devices.</p>
+          </section>
+
+          <section>
+            <h3>4. Feature chart</h3>
+            <p>This chart illustrates the features of this website.</p>
+
+            <table>
+
+              <tr>
+                <th>Features</th>
+                <td></td>
+              </tr>
+
+              <tr>
+                <th>Design</th>
+                <td>Great</td>
+              </tr>
+
+              <tr>
+                <th>Responsive</th>
+                <td>Yes</td>
+              </tr>
+
+              <tr>
+                <th>Fast</th>
+                <td>Yes</td>
+              </tr>
+
+              <tr>
+                <th>Simple purchase</th>
+                <td>Yes</td>
+              </tr>
+            </table>
+          </section>
+        </div>
+
+      </div> <!--row-->
+
+    </div> <!--container main-->
+  </div> <!--container fluid-->
+
+  <footer>
+   <div class="container">
+    <div class="row footer">
+      <div class="col-xs-12">
+        <p>Copyright &copy; 2017 Tae Ahn Kwon</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

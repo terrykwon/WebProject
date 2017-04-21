@@ -1,0 +1,154 @@
+body {
+    padding-top: 50px;
+    background: #000000;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+h1 {
+	color: white;
+	font-size: 2.5em;
+}
+
+h2 {
+	color: white;
+	font-size: 2em;
+}
+
+h3 {
+	color: black;
+	font-size: 2.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	color: white;
+}
+
+nav {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+
+/* The height between the top and the main content */
+header {
+	height: 260px;
+}
+
+.container.main {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.container-fluid {
+	background-color: #ebebeb;
+}
+
+
+/* Shift each row up for design purposes */
+.offset-row {
+	position: relative;
+	bottom: 32px;
+}
+
+.intro-box {
+	text-align: center;
+	height: 100%;
+	padding-top:100px;
+}
+
+.separator {
+	height: 3px;
+	width: 100px;
+	background-color: white;
+}
+
+
+.navbar-inverse {
+	background-color: #000000;
+}
+
+/* Animate items that are clickable */
+.clickable {
+	transition: filter, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease;
+}
+
+/* A floating animation */
+.clickable:hover {
+	filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.6));
+	transform: translateY(-4px);
+}
+
+.item {
+	margin-bottom: 16px;
+}
+
+.item .card {
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Change text color and underline when hovered */
+a:hover {
+	text-decoration: underline;
+	color: grey;
+}
+
+.clickable:hover h3 {
+	color: grey;
+}
+
+.card .desc {
+	padding: 8px 16px 8px 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.desc h3, h4 {
+	margin: 4px;
+}
+
+.item img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+/* A white line used for the footer */
+.separator-long {
+	height:2px;
+	width: 100%;
+	background-color: #acacac;
+}
+
+footer {
+	height: 76px;
+	margin-top: 36px;
+}
+
+.footer {
+	margin-top: 24px;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+	.container.main {
+		max-width: 1000px;
+	}
+}
