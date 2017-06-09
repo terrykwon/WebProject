@@ -23,17 +23,21 @@
 
     function submitForm() {
 
-      var validUsername = validateUsername();
-      var validPassword = validatePassword();
-      var validBirthdate = validateBirthdate();
-      var validPhoneNo = validatePhoneNo();
-      var validTerms = validateTerms();
+      // var validUsername = validateUsername();
+      // var validPassword = validatePassword();
+      // var validBirthdate = validateBirthdate();
+      // var validPhoneNo = validatePhoneNo();
+      // var validTerms = validateTerms();
 
-      if (validUsername && validPassword && validBirthdate && validPhoneNo && validTerms) {
-        console.log('All okay');
-      }
+      // if (validUsername && validPassword && validBirthdate && validPhoneNo && validTerms) {
+      //   console.log('All okay');
+      //   document.forms["login"].submit();
+      // }
 
-      return false;
+      // return false;
+
+      // debug
+      document.forms["login"].submit();
     }
 
     function validatePassword() {
@@ -93,8 +97,8 @@
 
         for (var i = 0; i < errors.length; i++) {
           str += errors[i] + "</br>";
-          document.getElementById("password-errors").innerHTML = str;
         }
+        document.getElementById("password-errors").innerHTML = str;
 
         return false;
 
@@ -161,11 +165,10 @@
 
         for (var i = 0; i < errors.length; i++) {
           str += errors[i] + "</br>";
-          document.getElementById("username-errors").innerHTML = str;
-          // document.getElementById("username-errors").style.color = "#EF9A9A";
         }
-
+        document.getElementById("username-errors").innerHTML = str;
         return false;
+
       } else {
         document.getElementById("username-errors").innerHTML = "";
 
@@ -244,40 +247,32 @@
 
     <h1 style="font-family: 'Montserrat', sans-serif;  font-weight: 600; margin: 130px 0px 66px 0px; text-align: center">Sign up</h1>
 
-    <form name="login">
-      <!-- Common countries that users input -->
-      <datalist id="countries">
-        <option value="South Korea"></option>
-        <option value="United States"></option>
-        <option value="China"></option>
-        <option value="Denmark"></option>
-        <option value="Serbia"></option>
-      </datalist>
+    <form name="login" action="signup.php" method="post">
 
       <div class="form-group">
         <label for="name">Username</label>
-        <input type="text" class="form-control" id="username" required autofocus>
+        <input type="text" class="form-control" name="username" id="username" required autofocus>
       </div>
 
       <p class="error-desc" id="username-errors"></p>   
 
       <div class="form-group">
         <label for="name">Password</label>
-        <input type="password" class="form-control password-text" id="password" required>
+        <input type="password" class="form-control password-text" name="password" id="password" required>
       </div>
 
       <p class="error-desc" id="password-errors"></p>  
 
       <div class="form-group">
         <label for="name">Date of birth</label>
-        <input type="text" class="form-control" id="birthdate" placeholder="YYMMDD" required>
+        <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="YYMMDD" required>
       </div>
 
       <p class="error-desc" id="birthdate-errors"></p> 
 
       <div class="form-group">
         <label for="name">Phone number</label>
-        <input type="tel" class="form-control" id="tel" placeholder="010-1234-1234" required>
+        <input type="tel" class="form-control" id="tel" name="tel" placeholder="010-1234-1234" required>
       </div>
 
       <p class="error-desc" id="tel-errors"></p>
