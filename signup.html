@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-  <title>Project 1</title>
+  <title>Sign up</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,11 +22,83 @@
   <script type="text/javascript" defer>
 
     function submitForm() {
-      validateForm();
+
+      validateUsername();
+
+      validatePassword();
+
+
       return false;
     }
 
-    function validateForm() {
+    function validatePassword() {
+      var password = document.forms["login"]["password"].value;
+      console.log(password);
+
+      var errors = [];
+
+      // 6~10 characters
+      if (password.length < 6 || password.length > 10) {
+        errors.push("- Password must be between 6 and 10 characters.");
+      }
+
+      if (password.includes(' ')) {
+        errors.push('- Password cannot include spaces.');
+      }
+
+      // Loop once to check for consecutive letters.
+      for (var i = 0; i < password.length - 2; i++) {
+        var c1 = password[i].charCodeAt(0);
+        var c2 = password[i + 1].charCodeAt(0);
+        var c3 = password[i + 2].charCodeAt(0);
+
+        // console.log(c1, c2, c3);
+        
+        if ((c1 - c2 == 1 && c2 - c3 == 1) || (c1 - c2 == -1 && c2 - c3 == -1)) {
+          errors.push('- Password cannot contain consecutive letters.');
+          break;
+        }
+      }
+
+      // Count the number of each charcter.
+      var pwArr = password.split("");
+      
+      while (pwArr.length >= 3) {
+        var char = pwArr.pop();
+        var count = 1;
+
+        console.log(pwArr.join(""));
+        // console.log(char);
+
+        for (var i = 0; i < pwArr.length; i++) {
+          if (pwArr[i] === char) {
+            count += 1;
+          }
+        }
+
+        if (count >= 3) {
+          errors.push('- Password cannot contain 3 identical letters.');
+          break;
+        }
+      }
+
+      // Display all errors.
+      if (errors.length > 0) {
+        var str = "";
+
+        for (var i = 0; i < errors.length; i++) {
+          str += errors[i] + "</br>";
+          document.getElementById("password-errors").innerHTML = str;
+        }
+
+        // return false;
+      } else {
+        document.getElementById("password-errors").innerHTML = "good";
+      }
+
+    }
+
+    function validateUsername() {
       var username = document.forms["login"]["username"].value;
 
       var errors = [];
@@ -81,12 +153,14 @@
 
         for (var i = 0; i < errors.length; i++) {
           str += errors[i] + "</br>";
-          document.getElementById("errors").innerHTML = str;
+          document.getElementById("username-errors").innerHTML = str;
+          document.getElementById("username-errors").style.color = "pink";
         }
 
         // return false;
       } else {
-        document.getElementById("errors").innerHTML = "good";
+        document.getElementById("username-errors").innerHTML = "Good";
+        document.getElementById("username-errors").style.color = "lime";
       }
     }
 
@@ -120,7 +194,7 @@
 
   <div class="container main">
 
-    <h1 style="font-family: 'Montserrat', sans-serif;  font-weight: 600; margin: 130px 0px 66px 0px; text-align: center">Login</h1>
+    <h1 style="font-family: 'Montserrat', sans-serif;  font-weight: 600; margin: 130px 0px 66px 0px; text-align: center">Sign up</h1>
 
     <form name="login">
       <!-- Common countries that users input -->
@@ -137,12 +211,14 @@
         <input type="text" class="form-control" id="username" required autofocus>
       </div>
 
+      <p id="username-errors"></p>   
+
       <div class="form-group">
         <label for="name">Password</label>
-        <input id="password-input" type="password" class="form-control" id="password" required>
+        <input type="password" class="form-control password-text" id="password" required>
       </div>
 
-      <p id="errors"></p>      
+      <p id="password-errors"></p>      
 
     </form>
 

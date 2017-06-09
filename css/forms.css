@@ -32,7 +32,12 @@ legend {
 	margin-bottom: 24px;
 }
 
-#password-input {
+.form-button {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+
+.password-text {
 	font-weight: 700;
 	letter-spacing: 3px;
 }
