@@ -23,10 +23,15 @@
 
     function submitForm() {
 
-      validateUsername();
+      var validUsername = validateUsername();
+      var validPassword = validatePassword();
+      var validBirthdate = validateBirthdate();
+      var validPhoneNo = validatePhoneNo();
+      var validTerms = validateTerms();
 
-      validatePassword();
-
+      if (validUsername && validPassword && validBirthdate && validPhoneNo && validTerms) {
+        console.log('All okay');
+      }
 
       return false;
     }
@@ -91,9 +96,12 @@
           document.getElementById("password-errors").innerHTML = str;
         }
 
-        // return false;
+        return false;
+
       } else {
-        document.getElementById("password-errors").innerHTML = "good";
+        document.getElementById("username-errors").innerHTML = "";
+
+        return true;
       }
 
     }
@@ -140,7 +148,7 @@
       }
 
       if (capsCount < 1) {
-        errors.push("- Username must include at least one captial letter.")
+        errors.push("- Username must include at least one capital letter.")
       }
 
       if (invalidCharCount > 0) {
@@ -154,14 +162,54 @@
         for (var i = 0; i < errors.length; i++) {
           str += errors[i] + "</br>";
           document.getElementById("username-errors").innerHTML = str;
-          document.getElementById("username-errors").style.color = "pink";
+          // document.getElementById("username-errors").style.color = "#EF9A9A";
         }
 
-        // return false;
+        return false;
       } else {
-        document.getElementById("username-errors").innerHTML = "Good";
-        document.getElementById("username-errors").style.color = "lime";
+        document.getElementById("username-errors").innerHTML = "";
+
+        return true;
       }
+    }
+
+    function validateBirthdate() {
+      var birthdate = document.forms["login"]["birthdate"].value;
+      var re = /^\d{6}$/;
+
+      if (re.test(birthdate)) {
+        document.getElementById("birthdate-errors").innerHTML = "";
+        return true;
+      }
+
+      document.getElementById("birthdate-errors").innerHTML = "- Date of birth must be in YYMMDD format.";
+      return false;
+
+    }
+
+    function validatePhoneNo() {
+      var tel = document.forms["login"]["tel"].value;
+      var re = /^\d{3}-\d{4}-\d{4}$/;
+
+      if (re.test(tel)) {
+        document.getElementById("tel-errors").innerHTML = "";
+        return true;
+      }
+
+      document.getElementById("tel-errors").innerHTML = "- Phone number must be in correct format.";
+      return false;
+    }
+
+    function validateTerms() {
+      var terms = document.forms["login"]["terms"].value;
+
+      if (terms.toLowerCase().includes("i agree to the website's terms and conditions")) {
+        document.getElementById("terms-errors").innerHTML = "";
+        return true;
+      }
+
+      document.getElementById("terms-errors").innerHTML = "- The text does not match.";
+      return false;
     }
 
   </script>
@@ -211,20 +259,41 @@
         <input type="text" class="form-control" id="username" required autofocus>
       </div>
 
-      <p id="username-errors"></p>   
+      <p class="error-desc" id="username-errors"></p>   
 
       <div class="form-group">
         <label for="name">Password</label>
         <input type="password" class="form-control password-text" id="password" required>
       </div>
 
-      <p id="password-errors"></p>      
+      <p class="error-desc" id="password-errors"></p>  
+
+      <div class="form-group">
+        <label for="name">Date of birth</label>
+        <input type="text" class="form-control" id="birthdate" placeholder="YYMMDD" required>
+      </div>
+
+      <p class="error-desc" id="birthdate-errors"></p> 
+
+      <div class="form-group">
+        <label for="name">Phone number</label>
+        <input type="tel" class="form-control" id="tel" placeholder="010-1234-1234" required>
+      </div>
+
+      <p class="error-desc" id="tel-errors"></p>
+
+      <div class="form-group">
+        <!-- <label for="name">Website conditions</label> -->
+        <p class="text-center">I agree to the website's terms and conditions.</p>
+        <input type="text" class="form-control" id="terms" placeholder="Type the text above." required>
+      </div>
+
+      <p class="error-desc" id="terms-errors"></p>
 
     </form>
 
     <div class="button-container pull-right">
-      <button class="btn btn-success form-button">Sign up</button>
-      <button class="btn btn-primary form-button" id="submit-button" onclick="submitForm()">Log in</button>
+      <button class="btn btn-primary form-button" id="submit-button" onclick="submitForm()">Sign up</button>
     </div>
 
   </div>

@@ -42,6 +42,10 @@ legend {
 	letter-spacing: 3px;
 }
 
+.error-desc {
+	color: #EF9A9A;
+}
+
 .container.main {
 	max-width: 500px;
 	padding-left: 16px;
