@@ -1,0 +1,65 @@
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+
+nav {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: white;
+}
+
+.navbar-inverse {
+	background-color: #000000;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+
+form {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+
+legend {
+	color: white;
+}
+
+.button-container {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+#password-input {
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+.container.main {
+	max-width: 500px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.separator-long {
+	height:2px;
+	width: 100%;
+	background-color: #acacac;
+}
+
+footer {
+	height: 76px;
+	margin-top: 36px;
+}
+
+.footer {
+	margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+	.container.main {
+
+	}
+}
